@@ -5,8 +5,82 @@
     <link href="/css/my.css" rel="stylesheet">
 </head>
 <body>
-<h1>RPG admin panel</h1>
-<h2>Accounts list:</h2>
-
+<h1>RPG Admin Panel</h1>
+<div class="banner">
+    <img src="img/banner.png" alt="Fantasy RPG Banner">
+</div>
+<h2>Accounts List:</h2>
+<table id="playerTable">
+    <thead>
+    <tr>
+        <th>ID</th>
+        <th>Name</th>
+        <th>Title</th>
+        <th>Race</th>
+        <th>Profession</th>
+        <th>Level</th>
+        <th>Birthday</th>
+        <th>Banned</th>
+        <th>Edit</th>
+        <th>Delete</th>
+    </tr>
+    </thead>
+    <tbody>
+    </tbody>
+</table>
+<div id="paginationControls">
+    <span id="totalRecordsInfo">Total records: 0</span>
+    <label for="recordsPerPage">Records per page: </label>
+    <select id="recordsPerPage">
+        <option value="3">3</option>
+        <option value="5">5</option>
+        <option value="10">10</option>
+        <option value="20">20</option>
+    </select>
+    <button id="prevPage" disabled>Previous</button>
+    <span id="pageInfo">Page 1 of 1</span>
+    <button id="nextPage" disabled>Next</button>
+</div>
+<hr>
+<h2>Create new account:</h2>
+<div class="form-container">
+    <form id="createPlayerForm">
+        <div class="form-group">
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" maxlength="12" required>
+        </div>
+        <div class="form-group">
+            <label for="title">Title:</label>
+            <input type="text" id="title" name="title" maxlength="30" required>
+        </div>
+        <div class="form-group">
+            <label for="race">Race:</label>
+            <select id="race" name="race" required>
+                <option value="">Loading...</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label for="profession">Profession:</label>
+            <select id="profession" name="profession" required>
+                <option value="">Loading...</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label for="level">Level:</label>
+            <input type="number" id="level" name="level" min="0" max="100" required>
+        </div>
+        <div class="form-group">
+            <label for="birthday">Birthday:</label>
+            <input type="date" id="birthday" name="birthday" required>
+        </div>
+        <div class="form-group">
+            <label for="banned">Banned:</label>
+            <input type="checkbox" id="banned" name="banned">
+        </div>
+        <button type="submit">Submit</button>
+    </form>
+</div>
+<div id="message" style="display: none;"></div>
+<script type="text/javascript" src="/html/script.js"></script>
 </body>
 </html>

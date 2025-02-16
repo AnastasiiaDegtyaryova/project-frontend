@@ -1,0 +1,1 @@
+To start the app please run 'mvn clean compile tomcat7:run' and open http://localhost:8080/ 
